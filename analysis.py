@@ -3,13 +3,17 @@ import pandas as pd
 # Load dataset
 data = pd.read_csv("players_15.csv")
 
+# Select required columns
+age = data["age"]
+overall = data["overall"]
+
 # Basic statistics
-mean_age = data["age"].mean()
-mean_overall = data["overall"].mean()
+mean_age = age.mean()
+mean_overall = overall.mean()
 
 # Correlation
-correlation = data["age"].corr(data["overall"])
+correlation = age.corr(overall)
 
-print("Mean Age:", mean_age)
-print("Mean Overall Rating:", mean_overall)
-print("Correlation between Age and Overall:", correlation)
+print(f"Mean Age: {mean_age:.2f}")
+print(f"Mean Overall Rating: {mean_overall:.2f}")
+print(f"Correlation between Age and Overall: {correlation:.4f}")
